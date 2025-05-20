@@ -3,9 +3,11 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { IoSearch } from "react-icons/io5";
 import { RiUser3Line } from "react-icons/ri";
 import CartDropdown from "./CartDropdown";
+import { useNavigate } from "react-router";
 
 const Navbar = () => {
   const [cartOpen, setCartOpen] = useState(false);
+  const navigate = useNavigate();
   return (
     <nav className="bg-gray-300 py-4 text-[18px] relative">
       <div className="flex justify-evenly items-center">
@@ -13,9 +15,11 @@ const Navbar = () => {
           <img src="" alt="LOGO" />
         </div>
         <div className="flex items-center space-x-6">
-          <button className="px-6">Home</button>
-          <button className="px-6">Our Products</button>
-          <button className="px-6">About Us</button>
+          <button onClick={()=> navigate('/')} className="px-6">Home</button>
+          <button onClick={() => navigate("/ourproducts")} className="px-6">Our Products</button>
+          <button  className="px-6">
+            About Us
+          </button>
         </div>
         <div className="flex gap-x-6">
           <button>

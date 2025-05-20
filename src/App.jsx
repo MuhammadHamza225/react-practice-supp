@@ -1,3 +1,4 @@
+import AllProductsPreview from "./components/AllProductsPreview";
 import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
 import Product from "./components/Product"
@@ -13,7 +14,9 @@ function App() {
     <Navbar/>
     <Routes>
       <Route path="/" element={<><Hero/>
-        <Product/></>}/>
+        <Product/>
+        </>}/>
+        <Route path="/ourproducts" element ={<AllProductsPreview/>}/>
         <Route path="/products/:category" element={<ProductCategoryPage/>}/>
     
     </Routes>
