@@ -2,8 +2,11 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FaTrashAlt } from "react-icons/fa";
 import { removeFromCart } from "../features/productSlice";
+import { useNavigate } from "react-router";
 
 const CartDropdown = () => {
+const navigate = useNavigate()
+
   const cartItems = useSelector((state) => state.products.cartItem);
   const dispatch = useDispatch();
   const removeItem = (productId) =>{
@@ -64,7 +67,7 @@ const CartDropdown = () => {
           <span>SUB TOTAL:</span>
           <span>${totalPrice}</span>
         </div>
-        <button className="w-full mt-4 bg-gray-500 text-white font-bold py-2 rounded hover:bg-gray-600 transition">
+        <button onClick={() =>navigate('/checkoutpage')} className="w-full mt-4 bg-gray-500 text-white font-bold py-2 rounded hover:bg-gray-600 transition">
           CHECKOUT
         </button>
         <button className="w-full mt-2 border-2 border-gray-500 text-gray-500 font-bold py-2 rounded hover:bg-gray-200 transition">
